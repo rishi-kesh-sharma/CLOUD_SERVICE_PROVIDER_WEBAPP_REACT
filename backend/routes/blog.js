@@ -18,12 +18,12 @@ const {
 Router.route("/all").get(getAllBlogs);
 
 // for admin
-Router.route("/admin/register").post(registerBlog);
-// Router.route("/admin/register").post(
-//   isAuthenticatedUser,
-//   authorizeRoles("superadmin admin"),
-//   registerBlog
-// );
+// Router.route("/admin/register").post(registerBlog);
+Router.route("/admin/register").post(
+  isAuthenticatedUser,
+  authorizeRoles("superadmin admin"),
+  registerBlog
+);
 Router.route("/:blogId").get(getSingleBlog);
 // Router.route("/admin/:blogId").put(
 //   isAuthenticatedUser,

@@ -3,6 +3,10 @@ const jwt = require("jsonwebtoken");
 // CREATE SCHEMA FOR BLOG
 const BlogSchema = mongoose.Schema(
   {
+    title: {
+      type: String,
+      required: true,
+    },
     text: {
       type: String,
       required: true,

@@ -8,25 +8,21 @@ class ApiFeatures {
   search() {
     const keyword = this.queryStr.keyword
       ? {
-          bankname: {
+          title: {
             $regex: this.queryStr.keyword,
             $options: "i",
           },
-          address: {
+          author: {
             $regex: this.queryStr.keyword,
             $options: "i",
           },
         }
       : {};
-    if (!keyword.bankname && !keyword.address) {
+    if (!keyword.title && !keyword.author) {
       this.query = this.query.find();
-      console.log(keyword);
     } else {
       this.query = this.query.find({
-        $or: [
-          { bankname: keyword["bankname"] },
-          { address: keyword["address"] },
-        ],
+        $or: [{ title: keyword["title"] }, { author: keyword["author"] }],
       });
     }
 

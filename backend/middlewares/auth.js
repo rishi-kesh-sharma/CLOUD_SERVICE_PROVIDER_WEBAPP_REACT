@@ -1,12 +1,8 @@
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const {
-  ApiFeatures,
-  destroyToken,
   ErrorHandler,
   getAuthenticatedUser,
-  sendEmail,
   sendResponse,
-  sendToken,
 } = require("../utils");
 exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
   const token = req.headers["auth-token"];

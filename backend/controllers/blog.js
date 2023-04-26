@@ -7,7 +7,8 @@ const { Blog } = require("../models");
 
 // REGISTER BLOG
 exports.registerBlog = catchAsyncErrors(async (req, res, next) => {
-  const blog = new Blog(req.body);
+  const { title, text } = req.body;
+  const blog = new Blog({ title, text, author: req.user._id });
 
   const savedBlog = await blog.save();
   if (!savedBlog) {
@@ -70,11 +71,10 @@ exports.getAllBlogs = catchAsyncErrors(async (req, res, next) => {
   let allBlogs = await apiFeature1.query;
   const totalBlogs = allBlogs.length;
 
-  const apiFeature2 = new ApiFeatures(Blog.find(), req.query)
+  const apiFeature2 = new ApiFeatures(Blog.find().populate("author"), req.query)
     .search()
     .pagination(resultPerPage);
   let blogs = await apiFeature2.query;
-
   const isNext =
     parseInt(req.query.page) * resultPerPage < totalBlogs &&
     totalBlogs > resultPerPage;
@@ -90,7 +90,9 @@ exports.getAllBlogs = catchAsyncErrors(async (req, res, next) => {
 // GET SINGLE bank
 
 exports.getSingleBlog = catchAsyncErrors(async (req, res, next) => {
-  const blog = await Blog.findById(req.params.blogId);
+  const blog = await Blog.findById(req.params.blogId).populate("author");
+  blog.populated("author");
+  console.log(blog);
   if (!blog) {
     sendResponse(404, res, { success: false, message: "blog not found " });
 

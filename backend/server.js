@@ -11,10 +11,11 @@ const {
   authRouter,
   blogRouter,
   //   contactRouter,
-  //   miscRouter,
+  miscRouter,
   // userRouter,
 } = require("./routes");
 const { errorMiddlware } = require("./middlewares");
+const { isAuthenticatedUser } = require("./middlewares/auth");
 
 // handling uncaught exceptions
 process.on("uncaughtException", (err) => {
@@ -74,7 +75,7 @@ app.use("/api/auth", authRouter);
 // // app.use("/api/appointment", isAuthenticatedUser, appointmentRouter);
 app.use("/api/blog", blogRouter);
 // app.use("/api/contact", isAuthenticatedUser, contactRouter);
-// app.use("/api/misc", isAuthenticatedUser, miscRouter);
+app.use("/api/misc", isAuthenticatedUser, miscRouter);
 
 //listening to the server
 
