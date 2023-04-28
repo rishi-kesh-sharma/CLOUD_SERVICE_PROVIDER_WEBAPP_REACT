@@ -24,7 +24,7 @@ const FAQ = () => {
         </Container>
       </Section>
       <Section className="bg-gray-50">
-        <Container className="md:pt-[2rem] pb-[4rem] lg:pt-[3rem] lg:pb-[5rem]">
+        <Container className="md:pt-[2rem] pb-[10rem] lg:pt-[3rem] lg:pb-[10rem]">
           <Testimonials />
         </Container>
       </Section>

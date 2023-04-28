@@ -67,24 +67,27 @@ exports.registerBlog = catchAsyncErrors(async (req, res, next) => {
 exports.getAllBlogs = catchAsyncErrors(async (req, res, next) => {
   const resultPerPage = Number(req.headers["rows-per-page"]);
 
-  let apiFeature1 = new ApiFeatures(Blog.find(), req.query).search();
+  let apiFeature1 = new ApiFeatures(Blog.find(), req.query);
   let allBlogs = await apiFeature1.query;
-  const totalBlogs = allBlogs.length;
+  // const totalBlogs = allBlogs.length;
 
-  const apiFeature2 = new ApiFeatures(Blog.find().populate("author"), req.query)
-    .search()
-    .pagination(resultPerPage);
-  let blogs = await apiFeature2.query;
-  const isNext =
-    parseInt(req.query.page) * resultPerPage < totalBlogs &&
-    totalBlogs > resultPerPage;
+  // const apiFeature2 = new ApiFeatures(
+  //   Blog.find().populate("author"),
+  //   req.query
+  // );
+  // .search();
+  // .pagination(resultPerPage);
+  // let blogs = await apiFeature2.query;
+  // const isNext =
+  //   parseInt(req.query.page) * resultPerPage < totalBlogs &&
+  //   totalBlogs > resultPerPage;
   sendResponse(res, 200, {
     success: true,
-    blogs,
-    next: isNext,
-    prev: apiFeature2.prev,
-    skip: apiFeature2.skip,
-    count: totalBlogs,
+    blogs: allBlogs,
+    // next: isNext,
+    // prev: apiFeature2.prev,
+    // skip: apiFeature2.skip,
+    // count: totalBlogs,
   });
 });
 // GET SINGLE bank

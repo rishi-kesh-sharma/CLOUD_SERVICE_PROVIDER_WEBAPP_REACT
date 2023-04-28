@@ -9,13 +9,11 @@ import logoImage from "../../assets/images/logo.png";
 import Image from "next/image";
 import Section from "../commons/Section";
 import { NavCtx } from "@/app/layout";
-import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { transparent, isHome } = useContext(NavCtx);
-  console.log(isHome);
+  const { transparent } = useContext(NavCtx);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -28,9 +26,9 @@ const Header = () => {
       <Container>
         <nav className="border-gray-200">
           <div className="mx-auto flex flex-wrap items-center justify-between py-5 lg:flex-row lg:flex-nowrap lg:justify-between">
-            <Link href="#" className="flex">
+            <a href="/" className="flex">
               <Image src={logoImage} />
-            </Link>
+            </a>
             <div className="flex  lg:hidden">
               <ToggleButton handleToggle={handleToggle} />
             </div>
@@ -43,54 +41,62 @@ const Header = () => {
                 <li className={``}>
                   <a
                     href="/"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}
                     aria-current="page">
                     Home
                   </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/about"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}>
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
                     About Us
-                  </Link>
+                  </a>
                 </li>
 
                 <li>
-                  <Link
+                  <a
                     href="/services"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}>
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
                     Services
-                  </Link>
+                  </a>
                 </li>
+
                 <li>
-                  <Link
-                    href="/faq"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}>
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
+                  <a
                     href="/pricing"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}>
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
                     Pricing
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
+                    href="/blogs"
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
+                    Blogs
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="/contact"
-                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4`}>
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
                     Contact
-                  </Link>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/faq"
+                    className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
+                    FAQ
+                  </a>
                 </li>
                 <li className="lg:ml-[2rem]">
-                  <Link href="http://localhost:3001/login" className="  md:p-0">
+                  <a href="http://localhost:3001/login" className="  md:p-0">
                     <Button
-                      className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white`}>
+                      className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white hover:scale-105 hover:bg-sky-800 transition-all`}>
                       Login!
                     </Button>
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

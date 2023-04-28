@@ -40,7 +40,7 @@ const Home = () => {
         </Container>
       </Section>
       <Section className="bg-gray-50">
-        <Container className="pt-[6rem] pb-[5rem]">
+        <Container className="pt-[6rem] pb-[5rem] md:pb-[2rem] lg:pb-0">
           <Features />
         </Container>
       </Section>

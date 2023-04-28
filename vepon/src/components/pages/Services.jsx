@@ -18,7 +18,7 @@ const images = [img1, img2, img3, img4, img5, img6];
 const Services = () => {
   return (
     <>
-      <Banner title="Services" breadCrumbs={["home", "Services"]} />
+      <Banner title="Services" breadCrumbs={["Home", "Services"]} />
       <Section className="bg-gray-50">
         <Container className="pt-[2rem] md:pt-[4rem] md:pb-[3rem] pb-[2rem]">
           <ServicesSection />
@@ -30,7 +30,7 @@ const Services = () => {
         </Container>
       </Section>
       <Section className="bg-gray-50 pt-[3rem] lg:pt-0">
-        <Container className="md:pt-[2rem] pb-[4rem] lg:pt-[6rem] lg:pb-[5rem] ">
+        <Container className="md:pt-[2rem] pb-[10rem] lg:pt-[6rem] lg:pb-[10rem] ">
           <Testimonials />
         </Container>
       </Section>
