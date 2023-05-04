@@ -30,7 +30,10 @@ const poppins = Poppins({
 export const NavCtx = createContext();
 
 export default function RootLayout({ children }) {
+  // state to identify whether to keep bg transparent for header
   const [transparent, setTransparent] = useState(true);
+
+  // scroll event listener
   addEventListener("scroll", (e) => {
     if (Number(window.scrollY) > 50) {
       setTransparent(false);
@@ -39,8 +42,6 @@ export default function RootLayout({ children }) {
     }
   });
 
-  console.log(location.pathname);
-
   return (
     <html lang="en">
       <style jsx global>{`
@@ -48,7 +49,11 @@ export default function RootLayout({ children }) {
           font-family: ${poppins.style.fontFamily};
         }
       `}</style>
-      <title>Home</title>
+
+      {/* dynamic title */}
+      <title>
+        {window.location.pathname.split("/")[1].toUpperCase() || "Home"}
+      </title>
       <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
       <body className={inter.className}>
         <NavCtx.Provider
@@ -71,11 +76,13 @@ export default function RootLayout({ children }) {
                         Are You Ready? Lets'S Work
                       </h1>
                     </div>
-                    <Button className="max-w-[170px] xl:max-w-[200px] uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-4 px-6  rounded-md">
-                      {window.location.pathname == "/services"
-                        ? " Request  Quote"
-                        : " Contact Us"}
-                    </Button>
+                    <a href="/contact">
+                      <Button className="max-w-[170px] xl:max-w-[200px] uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-4 px-6  rounded-md">
+                        {window.location.pathname == "/services"
+                          ? " Request  Quote"
+                          : " Contact Us"}
+                      </Button>
+                    </a>
                   </MountedContainer>
                 </Container>
               )}

@@ -22,7 +22,7 @@ const SecondaryHeader = () => {
     <Section
       className={`${
         transparent ? "lg:bg-transparent" : "lg:bg-[#d7dfef]"
-      } bg-[#d7dfef]  overflow-x-hidden fixed top-0 z-50 transition-all`}>
+      } bg-[#d7dfef]  overflow-x-hidden fixed top-0 z-50 transition-all overflow-hidden`}>
       <Container>
         <nav className="border-gray-200 ">
           <div className="mx-auto flex flex-wrap items-center justify-between py-5 lg:flex-row lg:flex-nowrap lg:justify-between">
@@ -74,7 +74,7 @@ const SecondaryHeader = () => {
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a
                     href="/pricing"
                     className={` ${
@@ -84,7 +84,7 @@ const SecondaryHeader = () => {
                     } text-gray-700 font-[500]   py-2 block pr-4  hover:scale-105 transition-all`}>
                     Pricing
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     href="/blogs"
@@ -99,17 +99,6 @@ const SecondaryHeader = () => {
                 </li>
                 <li>
                   <a
-                    href="/contact"
-                    className={` ${
-                      transparent
-                        ? "lg:text-gray-100 hover:text-white "
-                        : "text-gray-700 hover:text-blue-600"
-                    } text-gray-700 font-[500]   py-2 block pr-4   hover:scale-105 transition-all`}>
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="/faq"
                     className={` ${
                       transparent
@@ -119,10 +108,21 @@ const SecondaryHeader = () => {
                     FAQ
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className={` ${
+                      transparent
+                        ? "lg:text-gray-100 hover:text-white "
+                        : "text-gray-700 hover:text-blue-600"
+                    } text-gray-700 font-[500]   py-2 block pr-4   hover:scale-105 transition-all`}>
+                    Contact
+                  </a>
+                </li>
                 <li className="lg:ml-[2rem]">
                   <a href="http://localhost:3001/login" className="  md:p-0">
                     <Button
-                      className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white hover:scale-105 hover:bg-sky-800 transition-all`}>
+                      className={`bg-[#5BA5FB] text-gray-100 py-[4px] px-7 rounded-md border border-white hover:scale-105 hover:bg-sky-800 transition-all hover:`}>
                       Login!
                     </Button>
                   </a>

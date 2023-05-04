@@ -3,6 +3,7 @@ import service from "../../assets/images/service3.jpg";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
 import Image from "next/image";
+import { servicesData } from "@/data";
 const servicesLink = [
   {
     title: "DevOps Services",
@@ -35,21 +36,21 @@ const servicesLink = [
 ];
 
 const workingHours = [
-  "Mon-Fri 1:00-2:00 pm",
-  "Saturday 8:00 - 12:00pm",
-  "Sunday closed",
+  "sun-thu 9:00-5:00 pm",
+  "friday 9:00 - 1:00pm",
+  "saturday closed",
 ];
 
 const ServicesSideBar = () => {
   return (
-    <div className="flex flex-col gap-[1.5rem] pt-[2rem] md:pt-0 ">
+    <div className="flex flex-col md:col-span-2 lg:col-span-1 gap-[1.5rem] pt-[2rem] md:pt-0 ">
       <div className="py-[1rem]  bg-gray-100 rounded-lg">
         <h1 className="font-semibold text-[1.4rem] pl-[1rem] bg-gray-100 pb-[0.2rem]">
           All Services
         </h1>
 
         <ul className=" flex flex-col items-start justify-center gap-[0.5rem]  py-[1rem] px-[1rem]">
-          {servicesLink.map((item) => {
+          {servicesData.map((item) => {
             return (
               <li className="w-full py-[0.5rem] border-b border-b-gray-300  text-gray-500 last-of-type:border-none">
                 <a
@@ -83,14 +84,14 @@ const ServicesSideBar = () => {
           <Image src={service} className="h-full w-full rounded-lg" />
         </div>
         <div className="absolute z-[5] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  text-gray-100 ">
-          <h1 className="text-[1.7rem] font-semibold text-center">
+          <h1 className=" text-[1rem] lg:text-[1.4rem] md:text-[1.3rem] font-semibold text-center">
             Have any Query
           </h1>
-          {/* <a href="/contact" className="block "> */}
-          <button className=" text-gray-100 bg-blue-700 text-center py-[1rem] px-[1.5rem] flex gap-[1rem] items-center rounded-lg mx-auto w-[220px] text-[1rem]">
-            GET A QUOTE <BsArrowRight />{" "}
-          </button>
-          {/* </a> */}
+          <a href="/contact" className="block mt-[1rem]">
+            <button className=" lg:text-[1.1rem] lg:py-[0.9rem] text-gray-100 bg-blue-700 text-center py-[0.5rem]  px-[0.5rem] lg:px-[1rem] flex gap-[0.2rem] lg:gap-[1rem] md:gap-[0.3rem]  items-center rounded-md mx-auto lg:w-[180px] md:p-[0.5rem]  text-sm 2xl:w-[300px] 2xl:py-[1.4rem] ">
+              GET A QUOTE <BsArrowRight />{" "}
+            </button>
+          </a>
         </div>
       </div>
     </div>

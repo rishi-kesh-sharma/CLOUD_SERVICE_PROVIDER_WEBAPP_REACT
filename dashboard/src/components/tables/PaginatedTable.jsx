@@ -15,15 +15,13 @@ export default function PaginatedTable({
   rows,
   columns,
   page,
-  setPage,
   rowsPerPage,
   handleChangePage,
   handleChangeRowsPerPage,
   rowsPerPageOptions,
   count,
-  searchQuery,
-  setSearchQuery,
 }) {
+  console.log(count);
   const handleAddClick = () => {
     setOpenAddModal(true);
   };
@@ -45,15 +43,7 @@ export default function PaginatedTable({
           className="text-[3rem] bg-[#316EFF] text-white p-[0.5rem] rounded-full cursor-pointer"
         />{" "}
       </div>
-      <div className="flex items-end justify-end p-[0.7rem]">
-        {" "}
-        {/* <SearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          currentPage={page}
-          setCurrentPage={setPage}
-        /> */}
-      </div>
+      <div className="flex items-end justify-end p-[0.7rem]"> </div>
       <TableContainer sx={{ maxHeight: 430, overflow: "auto" }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -71,32 +61,35 @@ export default function PaginatedTable({
           </TableHead>
           <TableBody>
             {rows &&
-              rows?.map((row, index) => {
-                return (
-                  <TableRow
-                    hover
-                    role="checkbox"
-                    tabIndex={-1}
-                    key={page * rowsPerPage + index + 1}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align="left" className="">
-                          {typeof value == "object" && Array.isArray(value) ? (
-                            <div style={{ display: "flex", gap: "0.7rem" }}>
-                              {value.map((item) => item.link)}
-                            </div>
-                          ) : value?.length > 40 ? (
-                            `${value.slice(0, 40)}...`
-                          ) : (
-                            value
-                          )}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
+              rows
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                ?.map((row, index) => {
+                  return (
+                    <TableRow
+                      hover
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={page * rowsPerPage + index + 1}>
+                      {columns.map((column) => {
+                        const value = row[column.id];
+                        return (
+                          <TableCell key={column.id} align="left" className="">
+                            {typeof value == "object" &&
+                            Array.isArray(value) ? (
+                              <div style={{ display: "flex", gap: "0.7rem" }}>
+                                {value.map((item) => item.link)}
+                              </div>
+                            ) : value?.length > 40 ? (
+                              `${value.slice(0, 30)}...`
+                            ) : (
+                              value
+                            )}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })}
           </TableBody>
         </Table>
       </TableContainer>

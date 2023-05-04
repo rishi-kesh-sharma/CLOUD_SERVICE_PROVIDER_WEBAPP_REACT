@@ -26,8 +26,6 @@ function createData(sn, title, text, author, createdAt, updatedAt, actions) {
     author,
     createdAt: <Moment fromNow>{createdAt}</Moment>,
     updatedAt: <Moment fromNow>{updatedAt}</Moment>,
-    // updatedAt,
-    // actions,
   };
 }
 export default function BlogsTable({
@@ -57,16 +55,17 @@ export default function BlogsTable({
       dispatch({ type: SET_BLOGS, payload: response.data });
     };
     getBlogsInfo();
-  }, [page, searchQuery, rowsPerPage]);
+  }, []);
 
   // handle change rows per page
   const handleChangeRowsPerPage = (e) => {
-    setRowsPerPage(+e.target.value);
+    setRowsPerPage(e.target.value);
     setPage(0);
   };
 
   // handlle change page
   const handleChangePage = (e, newPage) => {
+    console.log(newPage);
     setPage(newPage);
   };
 
@@ -115,37 +114,12 @@ export default function BlogsTable({
   const rows = blogsInfo?.blogs?.map((blog, index) => {
     const { title, text, author, createdAt, updatedAt, _id } = blog;
     return createData(
-      page * rowsPerPage + index + 1,
+      index + 1,
       title,
       text,
-      author.username,
+      author?.username,
       createdAt,
       updatedAt
-
-      // [
-      //   {
-      //     name: "edit",
-      //     link: (
-      //       <FaEdit
-      //         className=" text-lg text-[#316EFF] cursor-pointer "
-      //         onClick={() => {
-      //           handleEdit(_id);
-      //         }}
-      //       />
-      //     ),
-      //   },
-      //   {
-      //     name: "delete",
-      //     link: (
-      //       <FaTrash
-      //         className=" text-lg text-red-500 cursor-pointer"
-      //         onClick={() => {
-      //           handleDelete(_id);
-      //         }}
-      //       />
-      //     ),
-      //   },
-      // ]
     );
   });
 
@@ -163,7 +137,7 @@ export default function BlogsTable({
       handleChangePage={handleChangePage}
       handleChangeRowsPerPage={handleChangeRowsPerPage}
       rowsPerPageOptions={rowsPerPageOptions}
-      count={blogsInfo?.count || rowsPerPage}
+      count={rows?.length}
     />
   );
 }

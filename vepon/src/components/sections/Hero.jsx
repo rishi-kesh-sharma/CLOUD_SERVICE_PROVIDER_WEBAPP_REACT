@@ -13,17 +13,23 @@ const Hero = () => {
         Fastest VPN and Proxy Solutions you need.
       </h1>
       <p className="max-w-[600px] text-sm text-gray-400 md:text-[1rem]">
-        Lorem ipsum dolor sit amet, adipisicing elit. Quod corrupti laborum,
-        quasi? Dolor sapiente amet optio harum dolores, voluptate, tempora
-        dolorem fugiat fuga autem .
+        Take advantage of the latest technologies to increase your productivity,
+        streamline your operations, and reduce your costs with our secure,
+        scalable, and reliable cloud services. Whether you need to store and
+        manage your data, run your applications, or collaborate with your team,
+        we have the expertise and infrastructure to meet your unique needs.
       </p>
       <div className="flex gap-[1rem] mt-6 flex-wrap">
-        <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 px-6 py-3 md:py-4 md:px-9 rounded-md">
-          Get Started
-        </Button>
-        <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-3 px-6 md:py-4 md:px-9 rounded-md">
-          Learn More
-        </Button>
+        <a href="/contact">
+          <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 px-6 py-3 md:py-4 md:px-9 rounded-md">
+            Get Quote
+          </Button>
+        </a>
+        <a href="/contact">
+          <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 py-3 px-6 md:py-4 md:px-9 rounded-md">
+            Learn More
+          </Button>
+        </a>
       </div>
       <HomeCards />
     </div>

@@ -58,7 +58,7 @@ const ContactForm = () => {
           Message
         </label>
       </div>
-      <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 px-6 py-3 md:py-4 md:px-9 rounded-md max-w-[200px] mx-auto">
+      <Button className="uppercase font-semibold text-sm bg-gradient-to-r from-sky-400 to-lime-900 text-gray-100 px-6 py-3 md:py-4 md:px-9 rounded-md max-w-[250px] mx-auto">
         Send Message
       </Button>
     </form>

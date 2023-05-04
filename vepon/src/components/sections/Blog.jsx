@@ -1,8 +1,16 @@
-import { blogs } from "@/data";
+"use client";
 
+import { blogs } from "@/data";
+import person1 from "../../assets/images/people/person1.jpg";
+import mainImage from "../../assets/images/service.jpg";
+import mainImage2 from "../../assets/images/service2.jpg";
+import mainImage3 from "../../assets/images/service3.jpg";
+import Moment from "react-moment";
 const Blog = ({ blog }) => {
-  const { mainImage, author, categories, title, publishedAt, createdAt } =
-    blogs[1];
+  let author = { ...blog.author, image: person1 };
+  console.log(blog);
+  blog = { ...blog, mainImage: mainImage, author };
+  const { createdAt, title, text } = blog;
   return (
     <div>
       <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 w-[97%] mx-auto">
@@ -13,25 +21,25 @@ const Blog = ({ blog }) => {
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                   <img
                     className="mr-4 w-16 h-16 rounded-full"
-                    src={author?.image.src}
-                    alt={author?.name}
+                    src={author?.image?.src}
+                    alt={author?.username}
                   />
                   <div>
                     <a
                       href="#"
                       rel="author"
                       className="text-xl font-bold text-gray-900 dark:text-white">
-                      {author?.name}
+                      {author?.username}
                     </a>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
-                      Graphic Designer, educator & CEO
+                      {author?.username || "  Graphic Designer, educator & CEO"}
                     </p>
                     <p className="text-base font-light text-gray-500 dark:text-gray-400">
                       <time
                         pubdate
                         datetime="2022-02-08"
                         title="February 8th, 2022">
-                        {publishedAt}
+                        <Moment fromNow>{createdAt}</Moment>
                       </time>
                     </p>
                   </div>
@@ -41,34 +49,16 @@ const Blog = ({ blog }) => {
                 {title}
               </h1>
             </header>
-            <p className="lead">
-              Flowbite is an open-source library of UI components built with the
-              utility-first classes from Tailwind CSS. It also includes
-              interactive elements such as dropdowns, modals, datepickers.
-            </p>
-            <p>
-              Before going digital, you might benefit from scribbling down some
-              ideas in a sketchbook. This way, you can think things through
-              before committing to an actual design project.
-            </p>
-            <p>
-              But then I found a{" "}
-              <a href="https://flowbite.com">
-                component library based on Tailwind CSS called Flowbite
-              </a>
-              . It comes with the most commonly used UI components, such as
-              buttons, navigation bars, cards, form elements, and more which are
-              conveniently built with the utility classes from Tailwind CSS.
-            </p>
+            <p className="lead">{text}</p>
+
             <figure>
               <img
                 src={mainImage?.src}
                 alt=""
                 className="rounded-lg my-[2rem]"
               />
-              <figcaption>Digital art by Anonymous</figcaption>
             </figure>
-            <h2>Getting started with Flowbite</h2>
+            {/* <h2>Getting started with Flowbite</h2>
             <p>
               First of all you need to understand how Flowbite works. This
               library is not another framework. Rather, it is a set of
@@ -310,7 +300,7 @@ const Blog = ({ blog }) => {
             <p>
               And there you have it! Everything you need to design and share
               prototypes — right in Flowbite Figma.
-            </p>
+            </p> */}
             <section className="not-format">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">

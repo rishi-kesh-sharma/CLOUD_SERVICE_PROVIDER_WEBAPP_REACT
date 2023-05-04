@@ -29,10 +29,10 @@ const AddBlogForm = ({ setOpen }) => {
         text: "Something went wrong!",
       });
     }
+    dispatch({ type: ADD_BLOG, payload: { ...values, author: "admin" } });
     resetForm({ values: "" });
     setOpen(false);
     Swal.fire("blog Added", "", "success");
-    dispatch({ type: ADD_BLOG, payload: values });
   };
   return (
     <div className="w-[100%] ">

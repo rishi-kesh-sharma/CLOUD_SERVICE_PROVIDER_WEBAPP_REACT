@@ -27,11 +27,7 @@ const Creative = () => {
       <div className="pt-[1rem] sm:pt-[3rem] pb-[2rem] sm">
         <motion.img
           src={image}
-          className=""
-          // initial={{ translateY: "200px", opacity: 0 }}
-          // whileInView={{ translateY: "0", opacity: 1 }}
-          // viewport={{ once: false }}
-          // transition={{ duration: 1, type: "tween" }}
+          className="lg:h-full object-contain"
           {...largeAnimation}
         />
       </div>
@@ -48,19 +44,26 @@ const Creative = () => {
           We Are The Trusted Experts We Keep Things Simple
         </motion.h1>
         <motion.p {...smallAnimation} className="text-gray-300 text-sm ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
-          dictum risus, non suscipit arcu. Quisque aliquam posuere tortor iscing
-          elit. Duis at dictum risus, non suscipit arcu.
+          As the trusted experts in our field, we understand that our customers
+          rely on us to provide them with simple and effective solutions. That's
+          why we keep things simple, by providing easy-to-use and
+          straightforward services that are designed to meet your specific
+          needs.
         </motion.p>
         <motion.p {...smallAnimation} className="text-gray-300 text-sm ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quori
-          laboriosam, dolorum ducimus aliquam consequuntur!
+          Our team of experienced professionals is dedicated to providing you
+          with the guidance and support you need to achieve your goals, without
+          unnecessary complications or confusion. We are always available to
+          help you, whether you need assistance selecting the best service,
+          setting up your account, or fixing a problem.
         </motion.p>
-        <motion.button
-          {...smallAnimation}
-          className="border border-gray-500 w-[150px] md:w-[170px] text-[#3581f3] font-semibold py-3 md:py-3 rounded-md bg-gray-50 mt-[2rem] text-sm">
-          READ MORE
-        </motion.button>
+        <a href="/about">
+          <motion.button
+            {...smallAnimation}
+            className="border border-gray-500 w-[150px] md:w-[170px] text-[#3581f3] font-semibold py-3 md:py-3 rounded-md bg-gray-50 mt-[2rem] text-sm">
+            READ MORE
+          </motion.button>
+        </a>
       </div>
     </motion.div>
   );

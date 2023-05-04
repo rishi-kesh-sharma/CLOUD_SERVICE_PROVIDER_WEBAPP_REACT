@@ -3,7 +3,6 @@ import SectionSubtitle from "../commons/SectionSubtitle";
 import SectionDescription from "../commons/SectionDescription";
 import SectionTitle from "../commons/SectionTitle";
 import ServicesCards from "../ServicesCards";
-import TestimonialsSlider from "../TestimonialsSlider";
 import { motion } from "framer-motion";
 import { smallAnimation } from "@/constants/animations";
 
@@ -27,9 +26,16 @@ const Services = () => {
           $as={motion.p}
           {...smallAnimation}
           className=" text-start md:mx-0 text-sm ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
-          laboriosam, dolorum ducimus aliquam consequuntur dolor sit amet,
-          consectetur adipisicing elit. Nemo quo laboriosam, dolorum ducimus!
+          We offer a wide range of cloud services to help businesses of all
+          sizes leverage the power of the cloud. Our cloud solutions are
+          designed to be scalable, reliable, and secure, with high levels of
+          performance and availability. We also offer a range of tools and
+          resources to help you manage your cloud services, including monitoring
+          and reporting, automation, and support services. With our cloud
+          services, you can easily deploy and manage your applications and
+          services, while reducing costs and increasing efficiency. Explore our
+          services today and see how we can help you transform your business
+          with the power of the cloud.
         </SectionDescription>
       </div>
       <ServicesCards />

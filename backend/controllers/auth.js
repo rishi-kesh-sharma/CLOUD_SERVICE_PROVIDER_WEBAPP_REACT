@@ -9,6 +9,7 @@ const {
 } = require("../utils");
 
 const { User } = require("../models");
+
 // REGISTER USER
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const {
@@ -118,7 +119,6 @@ exports.checkTokenValidity = catchAsyncErrors(async (req, res, next) => {
   const authenticatedUser = await getAuthenticatedUser(token);
   if (!authenticatedUser) {
     return sendResponse(res, 400, { success: false });
-    // if (!user) return sendResponse(res, 400, { success: false });
   }
   const user = await User.findOne({
     authTokens: { $all: [`${token}`] },

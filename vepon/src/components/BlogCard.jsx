@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { person1 } from "../assets/images/people/index";
-// import { parseISO, format } from "date-fns";
 import { MdNoPhotography } from "react-icons/md";
 import { blogs } from "@/data";
-export default function BlogCard({ blog, aspect, preloadImage }) {
+import Moment from "react-moment";
+export default function BlogCard({ blog }) {
   blog = { ...blogs[0], ...blog };
   const imageProps = blog?.mainImage ? blog.mainImage : null;
   const AuthorimageProps = person1;
@@ -33,20 +33,7 @@ lg:min-h-[310px]
             )}
           </Link>
         </div>
-        <div className="flex gap-0  items-start flex-col flex-wrap">
-          {blog.categories?.length &&
-            blog.categories.slice(0).map((category, index) => (
-              <Link href="#" key={index}>
-                <span
-                  className={`inline-block mt-5 text-xs font-medium tracking-wider uppercase py-1 px-2 text-gray-500 rounded-sm bg-${
-                    category.color ? `[${category.color}]` : "green-500"
-                  } bg-green-300`}>
-                  {category.title}
-                </span>
-              </Link>
-            ))}
-        </div>
-        <h2 className="text-gray-600 text-sm text-start font-semibold tracking-normal text-brand-primary dark:">
+        <h2 className="text-gray-600 text-sm text-start font-semibold tracking-normal text-brand-primary mt-[1rem]">
           <Link href={`/blog/${blog._id}`}>
             <span
               className=" text-gray-600 bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
@@ -69,8 +56,8 @@ lg:min-h-[310px]
           )}
         </div>
 
-        <div className="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center w-full mt-3 space-x-3 text-gray-500 dark:text-gray-400 justify-between">
+          <div className="flex items-center gap-3 justify-between">
             <div className="relative flex-shrink-0 w-5 h-5">
               {AuthorimageProps && (
                 <Image
@@ -82,19 +69,17 @@ lg:min-h-[310px]
                   alt={blog?.author?.name}
                   placeholder="blur"
                   sizes="30px"
-                  className="rounded-full"
+                  className="rounded-full object-contain"
                 />
               )}
             </div>
-            <span className="text-sm">{blog.author.name}</span>
+            <span className="text-sm">{blog?.author?.username}</span>
           </div>
           <span className="text-xs text-gray-300 dark:text-gray-600">
             &bull;
           </span>
-          <time
-            className="text-sm"
-            dateTime={blog?.publishedAt || blog.createdAt}>
-            {blog.publishedAt || blog.createdAt}
+          <time className="text-sm" dateTime={blog.createdAt}>
+            <Moment fromNow>{blog.createdAt}</Moment>
           </time>
         </div>
       </div>

@@ -17,12 +17,19 @@ const Contact = () => {
           Contact With Us
         </SectionSubtitle>
         <SectionDescription className="">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
-          laboriosam, dolorum ducimus aliquam consequuntur dolor sit amet,
+          We value our customers and are committed to providing the highest
+          level of support. If you have any questions about our cloud services
+          or need assistance with your account, please don't hesitate to contact
+          us.
         </SectionDescription>
       </div>
+
+      {/* CONTACT SECTION */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-[4rem]">
+        {/* CONTACT INFO CARDS */}
         <ContactCards />
+
+        {/* CONTACT FORM */}
         <ContactForm />
       </div>
     </div>

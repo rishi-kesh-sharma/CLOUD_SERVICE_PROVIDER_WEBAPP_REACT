@@ -16,17 +16,19 @@ const FAQ = () => {
           Frequently Asked Questions
         </SectionSubtitle>
         <SectionDescription className="">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
-          laboriosam, dolorum ducimus aliquam consequuntur dolor sit amet,
+          Here are answers to some Frequently Asked Questions.
         </SectionDescription>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] justify-start items-center">
+        {/* FAQ SECTION SIDE IMAGE */}
         <div className="flex items-center justify-center">
           <img
             src={"https://vpn1.netlify.app/static/media/about3.09c5ee1c.png"}
             className="w-full"
           />
         </div>
+
+        {/* FAQS CARD */}
         <FAQCards />
       </div>
     </div>

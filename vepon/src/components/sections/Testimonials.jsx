@@ -26,9 +26,12 @@ const Testimonials = () => {
           $as={motion.p}
           {...smallAnimation}
           className="text-center text-sm ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
+          We're thrilled to see that our efforts have not gone unnoticed. We are
+          proud to have received numerous glowing testimonials from our
+          satisfied clients.
         </SectionDescription>
       </div>
+      {/* TESTIMONIALS SLIDER */}
       <TestimonialsSlider />
     </div>
   );

@@ -22,7 +22,7 @@ const Header = () => {
     <Section
       className={` bg-[#d7dfef] ${
         transparent ? "lg:bg-transparent" : "lg:bg-[#d7dfef]"
-      } overflow-x-hidden fixed top-0 z-50 transition-all`}>
+      } overflow-x-hidden fixed top-0 z-50 transition-all overflow-hidden`}>
       <Container>
         <nav className="border-gray-200">
           <div className="mx-auto flex flex-wrap items-center justify-between py-5 lg:flex-row lg:flex-nowrap lg:justify-between">
@@ -62,13 +62,13 @@ const Header = () => {
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a
                     href="/pricing"
                     className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
                     Pricing
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     href="/blogs"
@@ -78,16 +78,16 @@ const Header = () => {
                 </li>
                 <li>
                   <a
-                    href="/contact"
+                    href="/faq"
                     className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
-                    Contact
+                    FAQ
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/faq"
+                    href="/contact"
                     className={`${"text-gray-700"} font-[500]   py-2 block pr-4  hover:text-blue-800 hover:scale-105 transition-all`}>
-                    FAQ
+                    Contact
                   </a>
                 </li>
                 <li className="lg:ml-[2rem]">

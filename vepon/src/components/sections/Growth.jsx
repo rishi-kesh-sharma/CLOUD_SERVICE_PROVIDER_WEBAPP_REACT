@@ -21,13 +21,19 @@ const Growth = () => {
         <motion.p
           {...smallAnimation}
           className="text-gray-300 text-sm  max-w-[500px] text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
-          dictum risus, non suscipit arcu. Quisque aliquam posuere tortor iscing
-          elit. Duis at dictum risus, non suscipit arcu.
+          We are proud of our growth and global coverage. Over the years, we
+          have expanded our services and infrastructure to meet the needs of
+          businesses around the world. With our global coverage, we are able to
+          provide our customers with access to our services from anywhere in the
+          world, making it easy to connect and collaborate with colleagues and
+          clients across borders.
         </motion.p>
       </div>
-      <div className="">
+      <div className="relative">
         <img src={image} />
+        <div className="absolute w-[20px] h-[20px] left-[4rem] top-[2rem]  md:h-[35px] md:w-[35px] border-[5px] rounded-full border-red-600 md:top-[10rem] md:right-[15rem] animate-pulse"></div>
+        <div className="absolute w-[20px] h-[20px] right-[5rem] top-[2rem] md:h-[35px] md:w-[35px] border-[5px] rounded-full border-red-600 md:top-[10rem] md:left-[10rem] animate-pulse"></div>
+        <div className="absolute w-[20px] h-[20px] bottom-[2rem] left-[40%] md:h-[35px] md:w-[35px] border-[5px] rounded-full border-red-600 md:bottom-[10rem] md:left-[50%] animate-pulse"></div>
       </div>
     </div>
   );

@@ -18,17 +18,24 @@ const images = [img1, img2, img3, img4, img5, img6];
 const Services = () => {
   return (
     <>
+      {/* BANNER */}
       <Banner title="Services" breadCrumbs={["Home", "Services"]} />
+
+      {/* SERVICES SECTION */}
       <Section className="bg-gray-50">
         <Container className="pt-[2rem] md:pt-[4rem] md:pb-[3rem] pb-[2rem]">
           <ServicesSection />
         </Container>
       </Section>
+
+      {/* GROWTH SECTION */}
       <Section className="bg-[linear-gradient(182deg,#469eff,#2f69ff)] ">
         <Container className="pt-[6rem] pb-[5rem]">
           <Growth />
         </Container>
       </Section>
+
+      {/* TESTIMONIALS SECTION */}
       <Section className="bg-gray-50 pt-[3rem] lg:pt-0">
         <Container className="md:pt-[2rem] pb-[10rem] lg:pt-[6rem] lg:pb-[10rem] ">
           <Testimonials />

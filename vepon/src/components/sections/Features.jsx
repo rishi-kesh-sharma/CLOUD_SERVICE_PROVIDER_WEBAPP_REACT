@@ -15,7 +15,7 @@ const Features = () => {
           $as={motion.h4}
           {...smallAnimation}
           className=" text-sm md:text-[1rem] text-center text-blue-600 font-semibold  ml-[1rem] rounded-md bg-blue-100 max-w-[150px] py-[0.3rem] mx-auto">
-          Our Features
+          Our Core Features
         </SectionTitle>
         <SectionSubtitle
           $as={motion.h1}
@@ -24,8 +24,9 @@ const Features = () => {
           Our Features
         </SectionSubtitle>
         <SectionDescription $as={motion.p} {...smallAnimation} className="">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
-          laboriosam, dolorum ducimus aliquam consequuntur dolor sit amet,
+          At our cloud service company, we pride ourselves on offering a range
+          of powerful features to help you get the most out of your cloud
+          services
         </SectionDescription>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] justify-start items-center">

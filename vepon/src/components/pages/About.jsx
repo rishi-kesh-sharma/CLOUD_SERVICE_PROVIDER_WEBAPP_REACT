@@ -24,16 +24,22 @@ const About = () => {
   return (
     <>
       <Banner title="About Us" breadCrumbs={["Home", "About Us"]} />
+
+      {/* FEATURES SECTION */}
       <Section className="bg-[linear-gradient(182deg,#469eff,#2f69ff)] ">
         <Section className="bg-gray-50 pb-[3rem] md:pb-[5rem]">
           <Container className="pt-[3rem] lg:pt-[4rem] pb-[5rem]">
             <Features />
           </Container>
         </Section>
+
+        {/* CREATIVE SECTION */}
         <Container className="pt-[6rem] pb-[5rem] ">
           <Creative />
         </Container>
       </Section>
+
+      {/* TESTIMONIALS SECTION */}
       <Section className="bg-gray-50 pb-[5rem] pt-[2rem] lg:pt-0">
         <Container className="md:pt-[2rem] pb-[4rem] lg:pt-[6rem] lg:pb-[5rem]">
           <Testimonials />

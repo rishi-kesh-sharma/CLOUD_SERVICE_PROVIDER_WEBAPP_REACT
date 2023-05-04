@@ -14,7 +14,7 @@ const blogReducer = (state = [], action) => {
     case UPDATE_BLOG:
       return state;
     case ADD_BLOG:
-      return [...state, action.payload];
+      return { success: true, blogs: [...state.blogs, action.payload] };
     case UPDATE_BLOG:
       return state;
     case DELETE_BLOG:

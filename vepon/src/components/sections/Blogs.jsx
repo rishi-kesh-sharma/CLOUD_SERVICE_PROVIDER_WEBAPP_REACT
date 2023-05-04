@@ -16,11 +16,11 @@ const Blogs = ({ blogs }) => {
           Read Our Blogs
         </SectionSubtitle>
         <SectionDescription className="">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo
-          laboriosam, dolorum ducimus aliquam consequuntur dolor sit amet,
+          Insights and Ideas: Explore Our Latest Blogs.
         </SectionDescription>
       </div>
       <div className="flex flex-col items-center justify-center">
+        {/* BLOGS PAGINATION */}
         {<PaginatedItems itemsPerPage={3} items={blogs} />}
       </div>
     </div>
