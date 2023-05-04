@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 const footer = {
   logo: logoImage,
-  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus voluptatibus neque illo id repellat quisquam? Autem expedita earum quae laborum ipsum ad.",
+  text: "As the trusted experts in our field, we understand that our customers rely on us to provide them with simple and effective solutions. That's why we keep things simple, by providing easy-to-use and straightforward services that are designed to meet your specific needs.",
   socials: [
     {
       icon: <BsFacebook className="text-xl text-blue-500" />,
